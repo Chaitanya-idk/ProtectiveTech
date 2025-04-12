@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protective Tech - AI-Enhanced Safety Gear</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: #00d4ff;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover {
+            color: #00d4ff;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #00d4ff;
+            color: #16213e;
+            padding: 0.9rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background-color: #00b8e0;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        section {
+            padding: 5rem 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 3.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid #00d4ff;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            margin-bottom: 1.2rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+        }
+        
+        .feature-card p {
+            color: #555;
+        }
+        
+        .products {
+            background-color: #e9f8fb;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .product-title {
+            font-size: 2.2rem;
+            color: #1a1a2e;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .product-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #00d4ff;
+        }
+        
+        .product-description {
+            color: #555;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+        
+        .features-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            color: #00d4ff;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .specs {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .specs h4 {
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+            font-size: 1.2rem;
+        }
+        
+        .specs-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .spec-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #444;
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1a1a2e;
+            margin: 2rem 0;
+        }
+        
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        footer {
+            background-color: #0f0f1a;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        
+        footer p {
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .product-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Protective<span>Tech</span></div>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Revolutionizing Safety with AI-Powered Protective Gear</h1>
+        <p>Smart helmets and equipment that monitor, alert, and protect in real-time. Experience the future of personal safety with our AI-enhanced technology.</p>
+        <a href="#contact" class="btn">JOIN NOW</a>
+    </section>
+    
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Protective Tech?</h2>
+            <p class="section-subtitle">Our AI-integrated safety equipment offers unprecedented protection through intelligent monitoring and real-time response systems.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-time Monitoring</h3>
+                    <p>Advanced AI-powered sensors continuously scan your environment to detect potential hazards before they become dangerous. The system analyzes air quality, temperature fluctuations, noise levels, and structural integrity to provide a comprehensive safety assessment at all times.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Emergency Alert System</h3>
+                    <p>When dangerous conditions are detected, our integrated emergency system instantly notifies emergency contacts and medical services with your precise GPS location. The automated SOS feature works even if you're unconscious, significantly reducing response times in critical situations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Ergonomic Design</h3>
+                    <p>Our protective gear is designed with comfort as a priority. Using smart materials and ergonomic principles, we've created safety equipment that feels natural to wear all day. The lightweight construction and balanced weight distribution eliminate the strain associated with traditional safety gear.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Health Monitoring</h3>
+                    <p>Built-in biometric sensors track vital signs including heart rate, body temperature, blood oxygen levels, and stress indicators. The system can detect patterns that might indicate fatigue, dehydration, or health emergencies before they escalate, allowing for preventative intervention.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <p class="section-subtitle">Cutting-edge protection through intelligent design and AI integration.</p>
+            
+            <div class="product-card">
+                <h3 class="product-title">AI Smart Safety Helmet</h3>
+                <p class="product-description">The flagship product in our safety line combines cutting-edge AI technology with robust physical protection. Designed for workers in construction, manufacturing, mining, and other high-risk environments, our Smart Safety Helmet creates a new standard for personal protection equipment.</p>
+                
+                <ul class="features-list">
+                    <li><strong>Environmental Analysis:</strong> Advanced sensors detect gas leaks, radiation, excessive noise, and other environmental hazards in real-time</li>
+                    <li><strong>Vital Monitoring:</strong> Continuous tracking of the wearer's physiological state to prevent medical emergencies</li>
+                    <li><strong>Emergency Response:</strong> Automated alert system with GPS location sharing to emergency services and designated contacts</li>
+                    <li><strong>Impact Protection:</strong> Enhanced physical protection through advanced impact-resistant materials that exceed safety standards</li>
+                    <li><strong>Ergonomic Design:</strong> Balanced weight distribution and cooling system for comfort during extended use</li>
+                    <li><strong>Voice Controls:</strong> Hands-free operation through natural language processing</li>
+                    <li><strong>Mobile Connectivity:</strong> Seamless integration with smartphone applications for personalized settings and data analysis</li>
+                </ul>
+                
+                <div class="specs">
+                    <h4>Technical Specifications</h4>
+                    <div class="specs-list">
+                        <div class="spec-item">
+                            <span class="spec-label">Battery Life:</span> 12-14 hours
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Weight:</span> 380 grams
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Connectivity:</span> Bluetooth 5.2, WiFi
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Water Resistance:</span> IP67
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Sensors:</span> Temperature, Gas, Impact, Motion
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Charging:</span> USB-C, Wireless
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="price">₹400 per helmet</div>
+                <a href="#contact" class="btn">Pre-order Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta" id="contact">
+        <h2>Join the Safety Revolution</h2>
+        <p>Be among the first to experience the future of protective gear. Sign up now for exclusive pre-launch offers and updates about our innovative safety solutions.</p>
+        <a href="#" class="btn">JOIN NOW</a>
+    </section>
+    
+    <footer>
+        <p>© 2025 Protective Tech. All Rights Reserved.</p>
+        <p>Contact: info@protectivetech.com | +91 8919073694</p>
+    </footer>
+</body>
+</html>
